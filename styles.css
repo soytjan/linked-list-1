@@ -23,8 +23,8 @@ h2 {
 }
 
 header {
-  height: 6%;
-  margin: auto;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 .create-bookmark-section, .bookmark-section {
