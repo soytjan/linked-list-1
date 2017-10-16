@@ -94,18 +94,17 @@ input::placeholder {
   overflow-y: auto;
   right: 0;
 }
-
+.display-off {
+    display:none;
+}
 .card {
   background-color: white;
   border: 1px solid #607D8B;
   color: #455A64;
-  display: none;
+  display: block;
   position: relative;
   margin: 25px 20px;
   padding: 10px 10px 22px;
-}
-#display-on {
-    display:block;
 }
 .card > h2 {
   font-size: 1.5em;
