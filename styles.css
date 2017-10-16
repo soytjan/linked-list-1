@@ -101,7 +101,7 @@ input::placeholder {
   display: block;
   position: relative;
   margin: 25px 20px;
-  padding: 10px 10px 25px;
+  padding: 10px 10px 22px;
 }
 
 .card > h2 {
@@ -113,8 +113,8 @@ input::placeholder {
 .card > p {
   border-top: 1px solid #CFD8DC;
   border-bottom: 1px solid #CFD8DC;
-  margin: 10px 5px;
-  padding: 15px 0;
+  margin: 10px 5px 8px;
+  padding: 20px 0;
   font-size: 1em;
 }
 
@@ -126,13 +126,15 @@ a {
 
 a:hover {
   text-decoration: none;
-  border-bottom: 1px solid #;
+  border-bottom: 1px solid #FFC107;
+  font-weight: 800;
 }
+
 
 .card > button {
   color: #455A64;
   padding: 0;
-  color: inherit;
+  /*color: inherit;*/
   background: none;
   border: none;
   text-decoration: underline #F2F4F4;
@@ -141,16 +143,35 @@ a:hover {
 }
 
 .mark-read-button {
-  left: 25px;
+  left: 14px;
 }
 
 .delete-button {
-  right: 25px;
+  right: 14px;
+}
+
+.card > button:hover {
+  text-decoration: underline #FFC107;
+}
+
+.mark-read-button:hover {
+  font-weight: 800;
 }
 
 .read {
-
+  background-color: #F2F4F4;
 }
+
+a .read {
+  border-bottom: 1px solid #CFD8DC; 
+}
+
+button .read {
+  color: #F05A28;
+  text-decoration: none;
+}
+
+
 
 .card {
 
