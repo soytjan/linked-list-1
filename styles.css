@@ -1,20 +1,16 @@
-* {
+body, html {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
 
 body {
-  font-size: 100%;
-  margin: 0;
-  padding: 0;
   width: 100%;
 }
 
 h1 {
   color: #FFFFFF;
   font-weight: 800;
-  font-size: 2.5em;
-  margin: 45px auto;
+  font-size: 3em;
 }
 
 h2 {
@@ -23,12 +19,12 @@ h2 {
 }
 
 header {
-  height: 6%;
-  margin: auto;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 .create-bookmark-section, .bookmark-section {
-  position: absolute;
+  position: fixed;
   display: inline-block;
   height: 100%;
   margin: 0;
@@ -43,12 +39,17 @@ header {
 }
 
 .create-bookmark-article {
+  /*display: block;
+  margin: auto;*/
   position: absolute;
-  margin-top: 35%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 img {
-  height: 35px;
+  height: 50px;
 }
 
 .link-form {
@@ -57,20 +58,29 @@ img {
 
 .input-box {
   box-sizing: border-box;
-  height: 60px;
-  width:88%;
-  margin: 3.5% 6%;
-  padding: 3%;
-  font-size: 1.2em;
+  display: block;
+  padding: 0.2em;
+  font-size: 1.5em;
+  margin: 40px auto;
+  width: 88%;
+}
+
+input::placeholder {
+  color: #BBBDBF;
 
 }
 
 .enter-button {
   background-color: #FFC107;
+  border-radius: 0;
+  border: 0;
   color: #FFFFFF;
   font-weight: 800;
   width: 88%;
-  margin: 3.5% 6%;
+  margin: 25px auto;
+  font-size: 1em;
+  padding: 0.5em;
+  display: block;
 }
 
 .enter-button:hover {
