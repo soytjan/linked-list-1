@@ -166,7 +166,7 @@ a .read {
   border-bottom: 1px solid #CFD8DC; 
 }
 
-button .read {
+.read .mark-read-button {
   color: #F05A28;
   text-decoration: none;
 }
