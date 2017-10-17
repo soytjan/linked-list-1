@@ -182,13 +182,19 @@ a .read {
 }
 
 @media screen and (max-width: 550px) {
+  .container {
+    height: 100%;
+  }
+
   .create-bookmark-section {
-    display: block;
     width: 100%;
+    position:absolute;
+    top: 0;
   }
 
   .bookmark-section {
-    display: block;
     width: 100%;
+    position: absolute;
+    bottom: 0;
   }
 }
