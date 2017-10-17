@@ -172,7 +172,6 @@ a .read {
 }
 
 
-
 .card {
 
 }
@@ -180,4 +179,16 @@ a .read {
 .bookmark-button {
   font-size: ;
   font
+}
+
+@media screen and (max-width: 550px) {
+  .create-bookmark-section {
+    display: block;
+    width: 100%;
+  }
+
+  .bookmark-section {
+    display: block;
+    width: 100%;
+  }
 }
