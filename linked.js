@@ -58,7 +58,9 @@ function validate() {
 function countCards() {
   var $read = $('.read').length;
   var $totalCards = $('.card').length;
-  return $('.count-cards').text($read + ' out of ' + $totalCards + ' cards read');
+  
+  $('.count-cards').text($read + ' of ' + $totalCards + ' cards read');
+  $('.count-card-container').removeClass('hidden');
 };
 
 function countReadCards() {
@@ -68,15 +70,18 @@ function countReadCards() {
   if ($read = 0) {
   $('.delete-all').addClass('.hide-delete-all').removeClass('.show-delete-all');
   console.log("hello");
-  return countReadCards();
-}
+ 
+  }
 };
+
 function appendUrl() {
   $('.bookmark-section' ).append(`<article class="card" id="bookmark0">
       <h2 id="first-title">${$webTitleInput.val()}</h2>
       <p><a href="${$webUrlInput.val()}">${$webUrlInput.val()}</a></p>
-      <button class="mark-read-button" id="mark-as-read">Read</button>
-      <button class="delete-button">Delete</button> 
+      <footer>
+        <button class="mark-read-button" id="mark-as-read">Read</button>
+        <button class="delete-button">Delete</button> 
+      </footer>  
       </article>`).children(':last').hide().fadeIn(800); 
 }
 

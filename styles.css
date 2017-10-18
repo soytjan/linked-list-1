@@ -131,7 +131,10 @@ a:hover {
   font-weight: 800;
 }
 
-.card-footer {
+
+
+/*card buttons stylings*/
+.card footer {
   height: 24px;
   width: 100%;
   position: relative;
@@ -159,7 +162,7 @@ a:hover {
   bottom: 0;
 }
 
-.card > button:hover {
+.card button:hover {
   text-decoration: underline #FFC107;
 }
 
@@ -180,17 +183,8 @@ a .read {
   text-decoration: none;
 }
 
-
-.bookmark-button {
-  font-size: ;
-  font
-}
-<<<<<<< HEAD
-
 /*error message stylings*/
-=======
-/*For the error message that pops up when there's an invalid url */
->>>>>>> master
+
 .error-message-container {
   height: 30px;
 }
@@ -202,17 +196,17 @@ a .read {
 
 }
 
-<<<<<<< HEAD
+/*cards read counter*/
 .count-card-container {
-  background-color: #FFC107;
-  display: inline-block;
-  width: 50px;
-  position: relative;
-  left: 90%;
-  padding: 5px;
+    position: fixed;
+    background-color: #FFC107;
+    width: 50px;
+    font-size: 1em;
+    text-align: center;
+    padding: 5px;
+    right: 50%;
+    z-index: 1;
 }
-
-
 
 @media screen and (max-width: 760px) {
   .container {
@@ -253,24 +247,18 @@ a .read {
     margin-top: 0;
     margin-bottom: 24px;
   }
+
+  .count-card-container {
+    right: 0;
+  }
 }
 
-=======
 
-/* For the 0 out of 0 cards read <article> */
-.count-card-article {
-  display: inline-block;
-  width: 50px;
-  position: relative;
-  left: 80%;
-}
 
 
 /* For the 'delete all read' button  */
-.hide-delete-all {
+.hidden {
   display: none;
 }
-.show-delete-all {
-  display: block;
-}
->>>>>>> master
+
+
