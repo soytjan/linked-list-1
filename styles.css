@@ -83,7 +83,7 @@ input::placeholder {
   display: block;
 }
 
-.enter-button:hover {
+.enter-button:hover, .enter-button:disabled {
   background-color: #FFD773;
 }
 
