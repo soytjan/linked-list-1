@@ -1,27 +1,20 @@
 var $webTitleInput = $('#web-title-input');
 var $webUrlInput = $('#web-url-input');
 
-$($webTitleInput).keyup(function(){
-  if($webTitleInput.val() === ''){
+$('.link-form input').keyup(function(){
+  if($webTitleInput.val() === '' || $webUrlInput.val() === '') {
     $('#submit').prop('disabled', true);
   } else {
     $('#submit').prop('disabled', false);
   }
-});
 
-$($webUrlInput).keyup(function(){
-  if($webUrlInput.val() === ''){
-    $('#submit').prop('disabled', true);
-  } else {
-    $('#submit').prop('disabled', false);
-  }
 });
 
 $('.enter-button').on('click', createBookmark)
 function createBookmark(event){
   var $form = $('.link-form');
   if (validate()) {
-    $('.error-message').text('Please enter a title and valid URL.').css('display', 'block')
+    $('.error-message').text('Please enter a valid URL.').css('display', 'block')
   } else {
     appendUrl();
     $('.error-message').fadeOut(800);
@@ -52,8 +45,8 @@ function validate() {
       console.log('valid url: ' + webUrl);
       return false;
     } else {
-    console.log('invalid url: ' + webUrl);
-    return true;
+      console.log('invalid url: ' + webUrl);
+      return true;
   }
 };
 
