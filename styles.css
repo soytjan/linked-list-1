@@ -83,7 +83,7 @@ input::placeholder {
   display: block;
 }
 
-.enter-button:hover {
+.enter-button:hover, .enter-button:disabled {
   background-color: #FFD773;
 }
 
@@ -179,7 +179,37 @@ a .read {
   text-decoration: none;
 }
 
-@media screen and (max-width: 750px) {
+
+.bookmark-button {
+  font-size: ;
+  font
+}
+
+/*error message stylings*/
+.error-message-container {
+  height: 30px;
+}
+
+.error-message {
+  color: #FFFFFF;
+  width: 88%;
+  margin: 0px auto;
+  text-align: center;
+
+}
+
+.count-card-container {
+  background-color: #FFC107;
+  display: inline-block;
+  width: 50px;
+  position: relative;
+  left: 90%;
+  padding: 5px;
+}
+
+
+
+@media screen and (max-width: 760px) {
   .container {
     height: 100vh;
   }
@@ -188,6 +218,10 @@ a .read {
     width: 100%;
     position: relative;
     top: 0;
+  }
+
+  .create-bookmark-section {
+    height: 40%;
   }
 
   .create-bookmark-article {
@@ -206,33 +240,13 @@ a .read {
     margin: 26px;
   }
 
+  header {
+    margin-bottom: 10px;
+  }
+
   .input-box {
     margin-top: 0;
     margin-bottom: 24px;
   }
 }
 
-.bookmark-button {
-  font-size: ;
-  font
-}
-
-.error-message-container {
-  height: 30px;
-}
-
-.error-message {
-  color: #FFFFFF;
-  width: 88%;
-  margin: 0px auto;
-  text-align: center;
-
-}
-
-.count-card-article {
-  display: inline-block;
-  width: 50px;
-  position: relative;
-  left: 80%;
-
-}

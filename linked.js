@@ -1,56 +1,30 @@
+var $webTitleInput = $('#web-title-input');
+var $webUrlInput = $('#web-url-input');
 
-
+$('.link-form input').keyup(function(){
+  if($webTitleInput.val() === '' || $webUrlInput.val() === '') {
+    $('#submit').prop('disabled', true);
+  } else {
+    $('#submit').prop('disabled', false);
+  }
+});
 
 $('.enter-button').on('click', createBookmark)
 function createBookmark(event){
-  var webTitle = $('#web-title-input').val(); 
-  var webUrl = $('#web-url-input').val();
-  var valid = validate();
-  if (valid) {
-     $('.error-message').text('yo fill this out').css('display', 'block')
+  var $form = $('.link-form');
+  if (validate()) {
+    $('.error-message').text('Please enter a valid URL.').css('display', 'block')
   } else {
-  
-  $('.bookmark-section' ).append(`<article class="card" id="bookmark0">
-        <h2 id="first-title">${webTitle}</h2>
-        <p><a href="${webUrl}">${webUrl}</a></p>
-        <footer class="card-footer">
-          <button class="mark-read-button" id="mark-as-read">Read</button>
-          <button class="delete-button">Delete</button>
-        </footer>   
-      </article>`)
-}; 
 
-        <button class="mark-read-button" id="mark-as-read">Read</button>
-        <button class="delete-button">Delete</button> 
-        </article>`);
-  $('.error-message').fadeOut(800);
-  countCards();
-
+    appendUrl();
+    $('.error-message').fadeOut(800);
+    countCards();
+    $form[0].reset();
+    $('#submit').prop('disabled', true);
   };
-
 };
-
-function validate() {
-  var urlPattern = /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/
-  var webTitle = $('#web-title-input').val(); 
-  var webUrl = $('#web-url-input').val();
-
-if ($.trim($('#web-url-input').val()) === urlPattern) {
-      return true;
-    } else {
-      return false;
-    }
-};
-
-function countCards() {
-  var read = $('.read').length;
-  var totalCards = $('.card').length;
-  return $('.count-cards').text(read + ' out of ' + totalCards + ' cards read');
-};
-
 
 $('.bookmark-section').on('click', function(){
-  // event.preventDefault();
   var currentCard = $(event.target).closest('article');
   if(event.target.className === 'mark-read-button') {
     $(currentCard).toggleClass('read');
@@ -64,20 +38,33 @@ $('.bookmark-section').on('click', function(){
   }
 });
 
-// $('#web-title-input').keyup(function(){
-//   var webTitleVal = $('#web-title-input').val();
-//   if(webTitleVal === ''){
-//     $('#submit').prop('disabled', true);
-//   } else {
-//     $('#submit').prop('disabled', false);
-//   }
-// });
+function validate() {
+  var webUrl = $webUrlInput.val();
+  var regexQuery = '^(https?://)?(www\\.)?([-a-z0-9]{1,63}\\.)*?[a-z0-9][-a-z0-9]{0,61}[a-z0-9]\\.[a-z]{2,6}(/[-\\w@\\+\\.~#\\?&/=%]*)?$';
+  var url = new RegExp(regexQuery,'i');
+    if (url.test(webUrl)) {
+      console.log('valid url: ' + webUrl);
+      return false;
+    } else {
+      console.log('invalid url: ' + webUrl);
+      return true;
+  }
+};
 
-// $('#web-url-input').keyup(function(){
-//   var webUrlVal = $('#web-url-input').val();
-//   if(webUrlVal === ''){
-//     $('#submit').prop('disabled', true);
-//   } else {
-//     $('#submit').prop('disabled', false);
-//   }
-// });
+function countCards() {
+  var read = $('.read').length;
+  var totalCards = $('.card').length;
+  return $('.count-cards').text(read + ' out of ' + totalCards + ' cards read');
+};
+
+function appendUrl() {
+  $('.bookmark-section' ).append(`<article class="card" id="bookmark0">
+      <h2 id="first-title">${$webTitleInput.val()}</h2>
+      <p><a href="${$webUrlInput.val()}">${$webUrlInput.val()}</a></p>
+      <button class="mark-read-button" id="mark-as-read">Read</button>
+      <button class="delete-button">Delete</button> 
+      </article>`).children(':last').hide().fadeIn(800); 
+}
+
+
+

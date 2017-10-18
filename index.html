@@ -11,7 +11,9 @@
 <!-- start create bookmarks section  -->
     <section class="container">
     <section class="create-bookmark-section">
-      <article class="count-card-article"><p class="count-cards"></p></article>
+      <article class="count-card-container">
+        <p class="count-cards"></p>
+      </article>
       <article class="create-bookmark-article">
         <header>
           <h1>Linked <img src="images/linked-list-logo.svg"> List</h1>
@@ -19,7 +21,7 @@
         <form class="link-form">
           <input type="text" name="website-title" class="input-box" placeholder="Website Title" id="web-title-input">
           <input type="url" name="website-url" class="input-box" placeholder="Website URL" id="web-url-input">
-          <button type="button" class="enter-button" id="submit">Enter</button>
+          <button type="button" class="enter-button" id="submit" disabled>Enter</button>
         </form>
         <article class="error-message-container"><p class="error-message"></p></article>
       </article>
