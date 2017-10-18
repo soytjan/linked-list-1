@@ -211,3 +211,28 @@ a .read {
     margin-bottom: 24px;
   }
 }
+
+.bookmark-button {
+  font-size: ;
+  font
+}
+
+.error-message-container {
+  height: 30px;
+}
+
+.error-message {
+  color: #FFFFFF;
+  width: 88%;
+  margin: 0px auto;
+  text-align: center;
+
+}
+
+.count-card-article {
+  display: inline-block;
+  width: 50px;
+  position: relative;
+  left: 80%;
+
+}
