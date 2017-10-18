@@ -205,9 +205,6 @@ a .read {
 
 
 /* For the 'delete all read' button  */
-.hide-delete-all {
+.hidden {
   display: none;
-}
-.show-delete-all {
-  display: block;
 }
