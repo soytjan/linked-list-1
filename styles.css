@@ -183,6 +183,23 @@ a .read {
   text-decoration: none;
 }
 
+/*delete all read button stylings*/
+.delete-all {
+  background-color: #FFC107;
+  border-radius: 0;
+  border: 0;
+  bottom: 0;
+  color: #FFFFFF;
+  font-weight: 400;
+  margin: auto;
+  font-size: 0.8em;
+  padding: 5px;
+  position: fixed;
+  right: 20%;
+  z-index: 1;
+}
+
+
 /*error message stylings*/
 
 .error-message-container {
@@ -214,13 +231,18 @@ a .read {
   }
 
   .create-bookmark-section, .bookmark-section {
+    display: block;
     width: 100%;
     position: relative;
     top: 0;
   }
 
   .create-bookmark-section {
-    height: 40%;
+    height: 43%;
+  }
+
+   .count-card-container {
+    right: 0;
   }
 
   .create-bookmark-article {
@@ -248,9 +270,11 @@ a .read {
     margin-bottom: 24px;
   }
 
-  .count-card-container {
-    right: 0;
+  .delete-all {
+    right: 45%;
   }
+
+ 
 }
 
 
