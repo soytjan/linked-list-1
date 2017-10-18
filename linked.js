@@ -9,11 +9,12 @@ function createBookmark(){
 	$(".bookmark-section" ).append(`<article class="card" id="bookmark0">
         <h2 id="first-title">${webTitle}</h2>
         <p><a href="${webUrl}">${webUrl}</a></p>
-        <button class="mark-read-button" id="mark-as-read">Read</button>
-        <button class="delete-button">Delete</button> 
+        <footer class="card-footer">
+          <button class="mark-read-button" id="mark-as-read">Read</button>
+          <button class="delete-button">Delete</button>
+        </footer>   
       </article>`)
 }; 
-
 
 $('.bookmark-section').on('click', function(){
   // event.preventDefault();
