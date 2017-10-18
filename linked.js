@@ -7,7 +7,6 @@ $('.link-form input').keyup(function(){
   } else {
     $('#submit').prop('disabled', false);
   }
-
 });
 
 $('.enter-button').on('click', createBookmark)
@@ -20,6 +19,7 @@ function createBookmark(event){
     $('.error-message').fadeOut(800);
     countCards();
     $form[0].reset();
+    $('#submit').prop('disabled', true);
   };
 };
 
