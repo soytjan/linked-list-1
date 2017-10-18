@@ -69,7 +69,7 @@ function appendUrl() {
       <p><a href="${$webUrlInput.val()}">${$webUrlInput.val()}</a></p>
       <button class="mark-read-button" id="mark-as-read">Read</button>
       <button class="delete-button">Delete</button> 
-      </article>`).hide().fadeIn(50);  
+      </article>`).children(':last').hide().fadeIn(800); 
 }
 
 
