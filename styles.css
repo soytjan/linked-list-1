@@ -9,8 +9,8 @@ body {
 
 h1 {
   color: #FFFFFF;
-  font-weight: 800;
   font-size: 3em;
+  font-weight: 800;
 }
 
 h2 {
@@ -23,15 +23,37 @@ header {
   text-align: center;
 }
 
+img {
+  height: 50px;
+}
+
+a {
+  border-bottom: 0.5px solid #F2F4F4;
+  color: #455A64;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 1px solid #FFC107;
+  font-weight: 800;
+  text-decoration: none;
+}
+
 .create-bookmark-section, .bookmark-section {
-  position: fixed;
   display: inline-block;
   height: 100%;
   margin: 0;
+  position: fixed;
   width: 50%;
 }
 
-/*Create bookmark section styling*/
+.hidden {
+  display: none;
+}
+
+/*CREATE BOOKMARK SECTION styling*/
+
+/*main section*/
 .create-bookmark-section {
   background-color: #455A64;
   color: #FFFFFF;
@@ -39,35 +61,11 @@ header {
 }
 
 .create-bookmark-article {
-  /*display: block;
-  margin: auto;*/
+  left: 50%;
   position: absolute;
   top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-}
-
-img {
-  height: 50px;
-}
-
-.link-form {
-
-}
-
-.input-box {
-  box-sizing: border-box;
-  display: block;
-  padding: 0.2em;
-  font-size: 1.5em;
-  margin: 40px auto;
-  width: 88%;
-}
-
-input::placeholder {
-  color: #BBBDBF;
-
 }
 
 .enter-button {
@@ -75,19 +73,60 @@ input::placeholder {
   border-radius: 0;
   border: 0;
   color: #FFFFFF;
-  font-weight: 700;
-  width: 88%;
-  margin: 25px auto;
-  font-size: 1em;
-  padding: 0.5em;
   display: block;
+  font-size: 1em;
+  font-weight: 700;
+  margin: 25px auto;
+  padding: 0.5em;
+  width: 88%;
 }
 
-.enter-button:hover, .enter-button:disabled {
+.enter-button:hover, 
+.enter-button:disabled, 
+.delete-all:hover {
   background-color: #FFD773;
 }
 
-/*Saved bookmark section styling*/
+.input-box {
+  box-sizing: border-box;
+  display: block;
+  font-size: 1.5em;
+  margin: 40px auto;
+  padding: 0.2em;
+  width: 88%;
+}
+
+input::placeholder {
+  color: #BBBDBF;
+}
+
+/*Extras*/
+/*Cards read counter*/
+.count-card-container {
+    background-color: #FFC107;
+    font-size: 1em;
+    padding: 5px;
+    position: fixed;
+    right: 50%;
+    text-align: center;
+    width: 50px;
+    z-index: 1;
+}
+
+/*error message stylings*/
+.error-message-container {
+  height: 30px;
+}
+
+.error-message {
+  color: #FFFFFF;
+  margin: 0px auto;
+  text-align: center;
+  width: 88%;
+}
+
+/*SAVED BOOKMARKS SECTION styling*/
+
 .bookmark-section {
   background-color: #CFD8DC;
   box-sizing: border-box;
@@ -100,40 +139,30 @@ input::placeholder {
   border: 2px solid #607D8B;
   color: #455A64;
   display: block;
-  position: relative;
   margin: 20.5px 15px;
   padding: 15px 15px 5px;
+  position: relative;
 }
 .card h2 {
   font-size: 1.5em;
   font-weight: 700;
-  padding-bottom: 10px;
   margin: 0;
+  padding-bottom: 10px;
 }
 
 .card p {
   border-top: 1px solid #CFD8DC;
   border-bottom: 1px solid #CFD8DC;
-  padding: 20px 0;
   font-size: 1em;
+  padding: 20px 0;
   width: 100%;
 }
 
-a {
-  color: #455A64;
-  text-decoration: none;
-  border-bottom: 0.5px solid #F2F4F4;
-}
-
-a:hover {
-  text-decoration: none;
-  border-bottom: 1px solid #FFC107;
-  font-weight: 800;
-}
-
-
-
 /*card buttons stylings*/
+.card button:hover {
+  text-decoration: underline #FFC107;
+}
+
 .card footer {
   height: 24px;
   width: 100%;
@@ -141,29 +170,23 @@ a:hover {
 }
 
 .card footer button {
-  color: #455A64;
-  padding: 0;
-  /*color: inherit;*/
   background: none;
   border: none;
-  text-decoration: underline #F2F4F4;
-  outline-color: white;
+  color: #455A64;
+  font-size: 0.8em;
+  padding: 0;
   position: absolute;
-  font-size: .8em;
-}
-
-.mark-read-button {
-  left: 0;
-  bottom: 0;
+  text-decoration: underline #F2F4F4;
 }
 
 .delete-button {
-  right: 0;
   bottom: 0;
+  right: 0;
 }
 
-.card button:hover {
-  text-decoration: underline #FFC107;
+.mark-read-button {
+  bottom: 0;
+  left: 0;
 }
 
 .mark-read-button:hover {
@@ -174,86 +197,73 @@ a:hover {
   background-color: #F2F4F4;
 }
 
-a .read {
-  border-bottom: 1px solid #CFD8DC; 
-}
-
 .read .mark-read-button {
   color: #F05A28;
   text-decoration: none;
 }
 
 /*delete all read button stylings*/
+.button-container {
+  bottom: 0;
+  position: fixed;
+  right: 0;
+  width: 50%;
+  z-index: 1;
+}
+
 .delete-all {
   background-color: #FFC107;
-  border-radius: 0;
   border: 0;
+  border-radius: 0;
   bottom: 0;
   color: #FFFFFF;
+  display: block;
+  font-size: 0.8em;
   font-weight: 400;
   margin: auto;
-  font-size: 0.8em;
   padding: 5px;
-  position: fixed;
   right: 20%;
   z-index: 1;
 }
 
-
-/*error message stylings*/
-
-.error-message-container {
-  height: 30px;
-}
-.error-message {
-  color: #FFFFFF;
-  width: 88%;
-  margin: 0px auto;
-  text-align: center;
-
-}
-
-/*cards read counter*/
-.count-card-container {
-    position: fixed;
-    background-color: #FFC107;
-    width: 50px;
-    font-size: 1em;
-    text-align: center;
-    padding: 5px;
-    right: 50%;
-    z-index: 1;
-}
-
 @media screen and (max-width: 760px) {
-  .container {
-    height: 100vh;
-  }
-
-  .create-bookmark-section, .bookmark-section {
-    display: block;
-    width: 100%;
-    position: relative;
-    top: 0;
-  }
-
-  .create-bookmark-section {
-    height: 43%;
-  }
-
-   .count-card-container {
-    right: 0;
-  }
-
-  .create-bookmark-article {
-    transform: none;
-    position: absolute;
-    top: 0;
-    left: 0;
+  
+  header {
+    margin-bottom: 10px;
   }
 
   img {
     height: 28px;
+  }
+
+  .button-container {
+    width: 100%;
+  }
+
+  .container {
+    height: 100vh;
+  } 
+
+  .count-card-container {
+    right: 0;
+  }
+
+  .create-bookmark-section, .bookmark-section {
+    display: block;
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+
+  .create-bookmark-article {
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: none;
+  }
+
+  .create-bookmark-section {
+    height: 43%;
   }
 
   .create-bookmark-section h1 {
@@ -261,27 +271,18 @@ a .read {
     margin: 26px;
   }
 
-  header {
-    margin-bottom: 10px;
-  }
-
-  .input-box {
-    margin-top: 0;
-    margin-bottom: 24px;
-  }
-
   .delete-all {
     right: 45%;
   }
 
- 
+  .input-box {
+    margin-bottom: 24px;
+    margin-top: 0;
+  }
 }
 
 
 
 
-/* For the 'delete all read' button  */
-.hidden {
-  display: none;
-}
+
 

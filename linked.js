@@ -1,9 +1,6 @@
 var $webTitleInput = $('#web-title-input');
 var $webUrlInput = $('#web-url-input');
 
-countReadCards();
-$('.bookmark-section').mousemove(countReadCards(event));
-
 $('.link-form input').keyup(function(){
   if($webTitleInput.val() === '' || $webUrlInput.val() === '') {
     $('#submit').prop('disabled', true);
@@ -18,7 +15,6 @@ function createBookmark(event){
   if (validate()) {
     $('.error-message').text('Please enter a valid URL.').css('display', 'block')
   } else {
-
     appendUrl();
     $('.error-message').fadeOut(800);
     countCards();
@@ -37,14 +33,12 @@ $('.bookmark-section').on('click', function(){
   if(event.target.className === 'delete-button') {
     $(currentCard).remove();
     countCards();
-
    } 
   if(event.target.className === 'delete-all') {
     $('.card.read').remove();
     countCards();
   }
   countReadCards();
-
 });
 
 function validate() {
@@ -60,10 +54,20 @@ function validate() {
   }
 };
 
+function appendUrl() {
+  $('.bookmark-section' ).append(`<article class="card" id="bookmark0">
+    <h2 id="first-title">${$webTitleInput.val()}</h2>
+    <p><a href="${$webUrlInput.val()}">${$webUrlInput.val()}</a></p>
+    <footer>
+      <button class="mark-read-button" id="mark-as-read">Read</button>
+      <button class="delete-button">Delete</button> 
+    </footer>  
+    </article>`).children(':last').hide().fadeIn(800); 
+}
+
 function countCards() {
   var $read = $('.read').length;
   var $totalCards = $('.card').length;
-  
   $('.count-cards').text($read + ' of ' + $totalCards + ' cards read');
   $('.count-card-container').removeClass('hidden');
 };
@@ -74,19 +78,10 @@ function countReadCards() {
   var $totalCards = $('.card').length;
   // countCards();
   if ($read === 0) {
-  $('.delete-all').toggleClass('hidden');
+  // $('.delete-all').toggleClass('hidden');
+  $('.button-container').toggleClass('hidden');
   }
 };
 
-function appendUrl() {
-  $('.bookmark-section' ).append(`<article class="card" id="bookmark0">
-      <h2 id="first-title">${$webTitleInput.val()}</h2>
-      <p><a href="${$webUrlInput.val()}">${$webUrlInput.val()}</a></p>
-      <footer>
-        <button class="mark-read-button" id="mark-as-read">Read</button>
-        <button class="delete-button">Delete</button> 
-      </footer>  
-      </article>`).children(':last').hide().fadeIn(800); 
-}
 
 
