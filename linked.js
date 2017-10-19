@@ -2,14 +2,14 @@ var $webTitleInput = $('#web-title-input');
 var $webUrlInput = $('#web-url-input');
 
 $('.bookmark-section').on('click', function(){
-  var currentCard = $(event.target).closest('article');
+  var $currentCard = $(event.target).closest('article');
   countReadCards();
   if(event.target.className === 'mark-read-button') {
-    $(currentCard).toggleClass('read');
+    $($currentCard).toggleClass('read');
     countCards();
   }
   if(event.target.className === 'delete-button') {
-    $(currentCard).remove();
+    $($currentCard).remove();
     countCards();
    } 
   if(event.target.className === 'delete-all') {
